@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
 
 function App() {
   return (
@@ -7,12 +8,13 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<div style={{ padding: "120px 40px" }}>Home page (vide pour l’instant)</div>} />
+        <Route path="/"  />
         <Route path="/services" element={<div style={{ padding: "120px 40px" }}>Services page</div>} />
        
        
         <Route path="/contact" element={<div style={{ padding: "120px 40px" }}>Contact page</div>} />
       </Routes>
+      <Hero />
     </>
   );
 }

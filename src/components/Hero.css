@@ -1,0 +1,108 @@
+/* Hero.css */
+.hero-section {
+    position: relative;
+    width: 100vw; /* Utilise toute la largeur de l'écran */
+    height: 600px;
+    margin-left: calc(-50vw + 50%); /* Force l'image à ignorer les marges du parent */
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        height: 700px;
+    }
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Élimine les bords blancs en zoomant légèrement */
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    z-index: 2;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+}
+
+.hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #22c55e; /* Vert éclatant */
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Taille adaptative */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Style des boutons réels */
+.btn-primary {
+    background-color: #00a859 !important; /* Couleur exacte de la maquette */
+    color: white !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    transition: transform 0.2s;
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+    color: white !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    border: 2px solid white !important;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover { transform: scale(1.05); }
+.btn-secondary:hover { background-color: rgba(255, 255, 255, 0.1); }
