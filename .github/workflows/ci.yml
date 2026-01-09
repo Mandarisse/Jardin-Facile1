@@ -1,6 +1,6 @@
 name: CI Jardin Facile
 
-# Déclenchement à chaque push sur n'importe quelle branche [cite: 74]
+# Déclenchement à chaque push sur n'importe quelle branche
 on: [push]
 
 jobs:
@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: 20
 
-      # Installation [cite: 76]
+      # Installation 
       - name: Installation des dépendances
         run: npm install
 
-      # Test simulé avec echo [cite: 77]
+      # Test simulé avec echo 
       - name: Exécution des tests
         run: |
           echo "Démarrage des tests unitaires..."
