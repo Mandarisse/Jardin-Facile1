@@ -3,12 +3,20 @@ import { Leaf } from 'lucide-react';
 import './Hero.css';
 
 export function Hero() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="accueil" className="hero-section">
+      {/* Background avec correction bordures blanches */}
       <div className="hero-background">
         <img 
           src="https://images.unsplash.com/photo-1580927084836-88b629bf502a?q=80&w=1920" 
-          alt="Jardin paysager" 
+          alt="Paysage de jardin" 
           className="hero-image"
         />
         <div className="hero-overlay"></div>
@@ -16,8 +24,9 @@ export function Hero() {
 
       <div className="hero-container">
         <div className="hero-content">
+          {/* Badge avec icône Leaf */}
           <div className="hero-badge">
-            <Leaf size={28} fill="currentColor" />
+            <Leaf size={30} fill="currentColor" />
             <span>Votre jardin, notre passion</span>
           </div>
           
@@ -31,10 +40,16 @@ export function Hero() {
           </p>
           
           <div className="hero-buttons">
-            <Button className="btn-primary">
+            <Button 
+              className="btn-primary"
+              onClick={() => scrollToSection('contact')}
+            >
               Demander un Devis
             </Button>
-            <Button className="btn-secondary">
+            <Button 
+              className="btn-secondary"
+              onClick={() => scrollToSection('services')}
+            >
               Nos Services
             </Button>
           </div>
