@@ -1,0 +1,30 @@
+name: CI Jardin Facile
+
+# Déclenchement à chaque push sur n'importe quelle branche [cite: 74]
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Récupération du code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Configuration de l'environnement Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Installation [cite: 76]
+      - name: Installation des dépendances
+        run: npm install
+
+      # Test simulé avec echo [cite: 77]
+      - name: Exécution des tests
+        run: |
+          echo "Démarrage des tests unitaires..."
+          npm test -- --watchAll=false
+          echo "Pipeline terminée avec succès (CI verte) !"

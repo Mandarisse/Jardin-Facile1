@@ -11,22 +11,21 @@ function App() {
   return (
     <>
       <Header />
-      <Services/>
-      <Gallery/>
-      <Contact/>
-
       <Routes>
-        <Route path="/" />
-        <Route path="/"  />
-        <Route path="/services" element={<div style={{ padding: "120px 40px" }}>Services page</div>} />
-       
-       
-        <Route path="/contact" element={<div style={{ padding: "120px 40px" }}>Contact page</div>} />
+        <Route path="/" element={<Hero />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/tips" element={<Tips />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
-      
-      <Hero />
-      <Tips />
+
       <Footer />
+      
+      
+      
+      
+      
     </>
   );
 }
