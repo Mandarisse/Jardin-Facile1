@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact" element={<div style={{ padding: "120px 40px" }}>Contact page</div>} />
       </Routes>
       <Hero />
+      <Footer />
     </>
   );
 }
