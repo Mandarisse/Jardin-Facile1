@@ -1,12 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Services } from "./components/Services";
+import { Gallery } from "./components/Gallery";
 
 function App() {
   return (
     <>
       <Header />
       <Services/>
+      <Gallery/>
 
       <Routes>
         <Route path="/" />
