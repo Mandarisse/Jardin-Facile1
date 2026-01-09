@@ -1,34 +1,33 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
+  const goTo = (path: string) => {
+    navigate(path);
+    setMobileMenuOpen(false);
   };
 
   return (
     <header className="header">
       <div className="header-container">
-        
+
         {/* Logo */}
-        <div className="logo">
+        <div className="logo" onClick={() => goTo("/")}>
           <h1>Jardin Facile</h1>
         </div>
 
         {/* Desktop Nav */}
         <nav className="nav-desktop">
-          <button onClick={() => scrollToSection("accueil")}>Accueil</button>
-          <button onClick={() => scrollToSection("services")}>Services</button>
-          <button onClick={() => scrollToSection("conseils")}>Conseils</button>
-          <button onClick={() => scrollToSection("galerie")}>Galerie</button>
-          <button onClick={() => scrollToSection("contact")}>Contact</button>
+          <button onClick={() => goTo("/")}>Accueil</button>
+          <button onClick={() => goTo("/services")}>Services</button>
+          <button onClick={() => goTo("/conseils")}>Conseils</button>
+          <button onClick={() => goTo("/galerie")}>Galerie</button>
+          <button onClick={() => goTo("/contact")}>Contact</button>
         </nav>
 
         {/* Contact */}
@@ -37,7 +36,7 @@ export function Header() {
             <Phone size={16} />
             <span>01 23 45 67 89</span>
           </div>
-          <button className="cta" onClick={() => scrollToSection("contact")}>
+          <button className="cta" onClick={() => goTo("/contact")}>
             Devis Gratuit
           </button>
         </div>
@@ -54,18 +53,18 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="nav-mobile">
-          <button onClick={() => scrollToSection("accueil")}>Accueil</button>
-          <button onClick={() => scrollToSection("services")}>Services</button>
-          <button onClick={() => scrollToSection("conseils")}>Conseils</button>
-          <button onClick={() => scrollToSection("galerie")}>Galerie</button>
-          <button onClick={() => scrollToSection("contact")}>Contact</button>
+          <button onClick={() => goTo("/")}>Accueil</button>
+          <button onClick={() => goTo("/services")}>Services</button>
+          <button onClick={() => goTo("/conseils")}>Conseils</button>
+          <button onClick={() => goTo("/galerie")}>Galerie</button>
+          <button onClick={() => goTo("/contact")}>Contact</button>
 
           <div className="phone mobile-phone">
             <Phone size={16} />
             <span>01 23 45 67 89</span>
           </div>
 
-          <button className="cta full" onClick={() => scrollToSection("contact")}>
+          <button className="cta full" onClick={() => goTo("/contact")}>
             Devis Gratuit
           </button>
         </div>
